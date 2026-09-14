@@ -1,2 +1,2 @@
 Trial, S, K, r, sigma, Moneyness, MC price, 95% CI lower, 95% CI upper, BS Price, BS in CI?
-1, 100, 90, 0.03, 0.20, ITM, 
+1, 100, 90, 0.03, 0.20, ITM, 10.3921, 10.1067, 10.6776, 10.4506, Yes
