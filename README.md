@@ -19,15 +19,23 @@ where r is the continuous risk-free interest rate, $$\sigma$$ is the realised an
 
 Expiration payoffs for each simulation were calculated for strike price K as below:
 
-$$\text{payoff} = \text{max}(S_{252} - K, 0)$$
+$$p = \text{max}(S_{252} - K, 0)$$
 
 1 million simulations were then ran, computing the rolling average and rolling square average in order to calculate the mean and standard error option payoff. These values were then discounted back to present value and a 95% confidence interval was constructed as follows:
 
-$$\text{discounted payoff} = \frac{\exp(\text{-}r)}{n} \sum_{i=1}^{n} \text{payoff}_i$$
-$$\text{standard error} = \sqrt{\frac{1}{n-1} \left(\frac{\sum_{i=1}^{n} \text{payoff}_i^2}{n} - \left(\frac{\sum_{i=1}^{n} \text{payoff}_i}{n} \right)^2     \right)} $$
-$$\text{discounted SE} = \exp(\text{-}r) \text{ SE} $$
+$$p_{discounted} = \frac{\exp(\text{-}r)}{n} \sum_{i=1}^{n} p_i$$
+$$\text{Standard Error} = \sqrt{\frac{1}{n-1} \left(\frac{\sum_{i=1}^{n} p_i^2}{n} - \left(\frac{\sum_{i=1}^{n} p_i}{n} \right)^2 \right)} $$
+$$SE_{discounted} = \exp(\text{-}r) \text{ SE} $$
 
-$$\text{CI} = [d_{payoff}-1.96d_{SE},d_{payoff}+1.96d_{SE}] $$
+$$\text{CI} = [p_{disc}-1.96SE_{disc},p_{disc}+1.96SE_{disc}] $$
+
+In order to valid the accuracy of this model, the Monte Carlo option prices were compared to the analytical Black-Scholes price of the same option by testing if the Black-Scholes price given below lied in the 95% confidence interval of the Monte Carlo price in at least 95% of trials.
+
+$$d_1 = \frac{\log \left(\frac{S}{K} \right) + r + \frac{\sigma^2}{2}}{\sigma} $$
+$$d_2 = d_1 - \sigma $$
+$$\text{Black-Scholes price} = SN(d_1) - K \exp(\text{-}r) N(d_2) $$
+
+where N(x) is the normal distribution cdf. Note these formulae hold for an expiration time of 1 year.
 
 ## Build and Run
 
@@ -68,3 +76,4 @@ On Windows:
 .\build\Debug\Monte_Carlo_option_pricer.exe
 ```
 
+## Results
