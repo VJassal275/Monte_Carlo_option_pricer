@@ -21,7 +21,7 @@ Expiration payoffs for each simulation were calculated for strike price K as bel
 
 $$p = \text{max}(S_{252} - K, 0)$$
 
-1 million simulations were then ran, computing the rolling average and rolling square average in order to calculate the mean and standard error option payoff. These values were then discounted back to present value and a 95% confidence interval was constructed as follows:
+n = 1 million simulations were then ran, computing the rolling average and rolling square average in order to calculate the mean and standard error option payoff. These values were then discounted back to present value and a 95% confidence interval was constructed as follows:
 
 $$p_{discounted} = \frac{\exp(\text{-}r)}{n} \sum_{i=1}^{n} p_i$$
 $$\text{Standard Error} = \sqrt{\frac{1}{n-1} \left(\frac{\sum_{i=1}^{n} p_i^2}{n} - \left(\frac{\sum_{i=1}^{n} p_i}{n} \right)^2 \right)} $$
@@ -87,3 +87,20 @@ On Windows:
 ```
 
 ## Results
+
+### Summary
+
+No. trials: 30
+
+Simulations per trial: 1000000
+
+Overall Black-Scholes coverage: 29/30
+
+ITM coverage: 10/10
+
+ATM coverage: 10/10
+
+OTM coverage: 9/10
+
+Table of trial results without Black-Scholes parameters (full table can be found in results.csv):
+
