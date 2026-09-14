@@ -1,2 +1,2 @@
-Run, S, K, r, sigma, MC price, 95% CI lower, 95% CI upper, BS Price, BS in CI?
-1, 
+Trial, S, K, r, sigma, Moneyness, MC price, 95% CI lower, 95% CI upper, BS Price, BS in CI?
+1, 100, 90, 0.03, 0.20, ITM, 
