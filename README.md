@@ -59,12 +59,12 @@ cmake --build build
 On macOS/Linux:
 
 ```bash
-./build/option_pricer
+./build/Monte_Carlo_option_pricer
 ```
 
 On Windows:
 
 ```powershell
-.\build\Debug\option_pricer.exe
+.\build\Debug\Monte_Carlo_option_pricer.exe
 ```
 
