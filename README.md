@@ -12,10 +12,10 @@ where we want the expected daily multiplier under the risk-neutral measure to be
 $$E[X] = \exp \left(\frac{r}{252} \right) $$
 Hence $$\frac{r}{252} = \mu + \frac{s^2}{2} \Rightarrow \mu = \frac{r - \frac{\sigma^2}{2}}{252} $$
 
-Therefore, $$S_{t+1} = R S_t$$ 
-where $$R \sim \text{LogN}(\mu, s^2) $$
-
 where r is the continuous risk-free interest rate, $$\sigma$$ is the realised annual volatility of the stock, $$S_t$$ is the price of the stock on day t
+
+Thus, day-to-day price dynamics are given by $$S_{t+1} = R S_t$$ 
+where $$R \sim \text{LogN}(\mu, s^2) $$
 
 Expiration payoffs for each simulation were calculated for strike price K as below:
 
