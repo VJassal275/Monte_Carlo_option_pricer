@@ -37,13 +37,13 @@ void M_C_pricer(double S, double K, double r, double sigma, std::mt19937& gen) {
 
     // rescaling annual volatility and risk-free interest rate to daily values
     double s = sigma / std::sqrt(252);
-    double r_daily = std::exp(r/252) - 1;
+    double mu = (r - 0.5*sigma*sigma)/252;
 
     // initialising rolling average and rolling square average
     double r_a = 0;
     double r_s_a = 0;
 
-    std::lognormal_distribution<double> dist(r_daily, s);
+    std::lognormal_distribution<double> dist(mu, s);
     for (int j = 0; j < walks; j++) {
         S = S_0;
         for (int i = 0; i < 252; i++) {
@@ -70,7 +70,7 @@ void M_C_pricer(double S, double K, double r, double sigma, std::mt19937& gen) {
     // constructing a 95% confidence interval around the mean option price
 
     std::cout << "The Black-Scholes price is " << B_S_price << "\n";
-    std::cout << "The Monte-Carlo price is " << r_a << " With 95% confidence interval [" << lower_bound << ", " << upper_bound << "] \n";
+    std::cout << "The Monte-Carlo price is " << M_S_price << " With 95% confidence interval [" << lower_bound << ", " << upper_bound << "] \n";
     std::cout << ((lower_bound <= B_S_price && B_S_price <= upper_bound) 
         ? "So the Black-Scholes lies in this range \n" 
         : "So the Black-Scholes does not lie in this range \n");
