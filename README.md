@@ -136,3 +136,13 @@ Table of trial results without Black-Scholes parameters (full table can be found
 |    28 |   9.9235 |      9.87588 |      9.97112 |  9.88849 |    Yes    |
 |    29 |  2.59696 |      2.58110 |      2.61282 |  2.59068 |    Yes    |
 |    30 |  11.1002 |      11.0563 |      11.1441 |  11.1339 |    Yes    |
+
+Mean signed percentage error (MC - BS): -0.139%
+
+Mean absolute percentage error: 0.210%
+
+Trial 2 was an outlier with a -2.12% signed error 
+
+## Conclusion
+
+Overall, the 29/30 or roughly 97% coverage of Black-Scholes prices in the 95% confidence interval of Monte-Carlo prices provides strong empirical evidence in favour of this model well representing option price dynamics. In particular this discrete multiplicative random walk has shown to be a good approximation to the continuous geometric Brownian motion process, however there were still errors present. The precision of this model could be improved upon by more frequent price updates to simulate a continuous process, or to add antithetic variates to reduce the standard error without adding more trials.
