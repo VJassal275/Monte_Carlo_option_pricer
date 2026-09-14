@@ -29,5 +29,42 @@ $$\text{discounted SE} = \exp(\text{-}r) \text{ SE} $$
 
 $$\text{CI} = [d_{payoff}-1.96d_{SE},d_{payoff}+1.96d_{SE}] $$
 
+## Build and Run
 
+### Requirements
+
+- A C++17-compatible compiler
+- CMake 3.15 or later
+
+### Build
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone <repository-url>
+cd Monte_Carlo_option_pricer
+```
+
+Replace `<repository-url>` with the URL of this GitHub repository.
+
+Configure and build the project using CMake:
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+### Run
+
+On macOS/Linux:
+
+```bash
+./build/option_pricer
+```
+
+On Windows:
+
+```powershell
+.\build\Debug\option_pricer.exe
+```
 
