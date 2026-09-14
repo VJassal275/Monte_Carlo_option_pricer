@@ -37,6 +37,14 @@ $$\text{Black-Scholes price} = SN(d_1) - K \exp(\text{-}r) N(d_2) $$
 
 where N(x) is the normal distribution cdf. Note these formulae hold for an expiration time of 1 year.
 
+## Example output
+
+Output for S = 100.0, K = 90.0, r = 0.03, sigma = 0.20:
+
+The Black-Scholes price is 10.4506
+The Monte-Carlo price is 10.3921 with 95% confidence interval [10.1067, 10.6776] 
+So the Black-Scholes lies in this range 
+
 ## Build and Run
 
 ### Requirements
