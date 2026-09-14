@@ -42,7 +42,9 @@ where N(x) is the normal distribution cdf. Note these formulae hold for an expir
 Output for S = 100.0, K = 90.0, r = 0.03, sigma = 0.20:
 
 The Black-Scholes price is 10.4506
+
 The Monte-Carlo price is 10.3921 with 95% confidence interval [10.1067, 10.6776] 
+
 So the Black-Scholes lies in this range 
 
 ## Build and Run
