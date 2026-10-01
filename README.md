@@ -59,11 +59,9 @@ So the Black-Scholes lies in this range
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/VJassal275/Monte_Carlo_option_pricer>
 cd Monte_Carlo_option_pricer
 ```
-
-Replace `<repository-url>` with the URL of this GitHub repository.
 
 Configure and build the project using CMake:
 
